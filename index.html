@@ -16,17 +16,62 @@
               
             font-family: SunTommy;
            }
+           .header{
+background-image: url("image/banner.png");
+background-repeat: no-repeat;
+background-size: 100% 230px;
+        }
            .head{
-               text-align: center;
-               font-size: 34px;
-               font-weight: bolder;
+              font-weight: bolder;
            }
 
            .rcorner{
                align-items: right;
                
            }
-          
+           .tab {
+               margin-right: 100px;
+               align-items: center;
+               text-align: center;
+  overflow: hidden;
+  font-family: SunTommy;
+color: white;
+  background-color: transparent;
+  
+           }
+
+/* Style the buttons inside the tab */
+.tab button {
+ background-color: transparent;
+  float:right;
+  
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 14px;
+  transition: 0.3s;
+  font-family: SunTommy;
+color: white;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  font-size: 17px;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  font-size: 24px;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+
+}
 
             </style>
             
@@ -41,19 +86,61 @@
    
 
     <body >
-        <div class=" h-100 w-100">
+        <div class=" container-fluid header h-100 w-100 p-3">
+            <h6 style="text-align: center;">tp~;ZJh;if Jiz</h6>
+        <h1 style="text-align: right;">mUs;kpF tp~;ZJh;if jpUf;Nfhapy; rptfq;if</h1>   
+        <h1 style=" text-align: right; font-family: 'Times New Roman', Times, serif;">Arulmiku Vishnudurgai Thirukovil, Sivagangai</h1>   
+<br/>
+<div class="tab">
+    <button style="text-shadow: 2px 2px #0000;" class="tablinks" onclick="openCity(event, 'London')">gpuhh;j;jiz  
+    </button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')">jyngUik</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">jytuyhW</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">epfo;Tfs;  </button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">  Kfthp</button>
 
-<img src="image/top.png" width="100%"/>
-            </div>
+  </div>
+        </div>
+ <div>
+ </div>       
     
     <audio src="kk.mp3" autoplay loop>ji</audio>
 
     
-    
-       
 
 
-
+   
+      
+      <div id="London" class="tabcontent">
+        <h3 style="font-family: SunTommy;">gpuhh;j;jiz:</h3>
+        <p></p>
+      </div>
+      
+      <div id="Paris" class="tabcontent">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p> 
+      </div>
+      
+      <div id="Tokyo" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+      </div>
+      
+      <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      </script>
 
 
 
