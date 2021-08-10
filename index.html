@@ -42,6 +42,68 @@ background-size: 100% 100%;
   animation: spin 2s linear infinite;
 }
 
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fd7e14;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #000000;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #ffffff;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  text-align: right;
+  float: right;
+  font-size: 30px;
+  cursor: pointer;
+  font-weight:bolder;
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+
+.openbtn:hover {
+  font-size: 25px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
@@ -109,6 +171,7 @@ font-size: 24px;
 
 
 
+
 @media screen and (max-width: 600px) {
 
   .topnav a:not(:first-child) {display: none;}
@@ -157,15 +220,21 @@ font-size: 24px;
         <h1 style=" text-align: right; font-family: 'Times New Roman', Times, serif;">Arulmiku Vishnudurgai Thirukovil, Sivagangai</h1>   
 <br/>
 
-  <div class="topnav" id="myTopnav">
-    <a href="தலபெருமை.html" target="_blank" >jyngUik</a>
-    <a href="தலவரலாறு.html" target="_blank"  >jytuyhW</a>
-    <a href="பிராத்தனை.html" target="_blank" >gpuhh;j;jiz</a>
-    <a href="கலை காட்சி கூடம்.html" target="_blank">fiy fhl;rp    </a>
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰&nbsp;<span style="font-weight: 600;"></span></button>  
+</div><br/>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="தலபெருமை.html"  >jyngUik</a>
+  <a href="தலவரலாறு.html"  >jytuyhW</a>
+  <a href="பிராத்தனை.html"  >gpuhh;j;jiz</a>
+  <a href="கலை காட்சி கூடம்.html" >fiy fhl;rp    </a>
 
-    <a href="முகவரி.html" target="_blank" >Kfthp</a>
+  <a href="முகவரி.html"  >Kfthp</a>
 
-  </div>
+</div>
+
+ 
  </div>
         
  <div  style="text-align: center;">
@@ -181,7 +250,7 @@ font-size: 24px;
 <div class="container">
   <div class="row">
     <div class="col">
-      <img src="/image/a3.jpeg" height="600px" width="400px"/>
+      <img src="/image/a3.jpeg" class="ff" height="600px" width="400px"/>
     </div>
     <div class="col  p-5"><br/>
       <h2 style="text-align: center;">tpguk;:</h2>
@@ -206,10 +275,21 @@ font-size: 24px;
 </div>
  </div> 
       <script>
+
+
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
         var myVar;
 
 function myFunction1() {
-  myVar = setTimeout(showPage, 3000);
+  myVar = setTimeout(showPage, 1000);
 }
 
 function showPage() {
